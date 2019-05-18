@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car Game</title>
+</head>
+<body>
+    <h1>Car Activity!</h1>
+
+    <p>If you want to honk the horn, type "h"</p>
+    <p>To find out your new mileage, type "d"</p>
+    <p>To drive to work, type "w"</p>
+
+    
+
+    <script>
+
+    function reWriteStats() {
+        console.log(
+            car.make,
+            car.model,
+            car.color,
+            car.mileage,
+            car.isWorking
+        );
+    };
+
+    var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+
+        driveToWork: function () {
+
+            alert("Old Mileage: " + this.mileage);
+
+            this.mileage = this.mileage + 8;
+
+            alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function () {
+
+            alert("Old Mileage: " + this.mileage);
+
+            this.mileage = this.mileage + 24000;
+
+            alert("New Mileage: " + this.mileage);
+            alert("Car needs a tuneup!");
+
+            this.isWorking = false;
+        },
+
+        getTuneUp: function () {
+            alert("Car is ready to go!");
+            this.isWorking = true;
+        },
+
+        honk: function () {
+            alert("Honk! Honk!");
+        }
+    };
+
+// var action = prompt("What do you want to do?");
+// console.log(action);
+
+    document.onkeyup = function(event) {
+        console.log(event);
+        var letter = event.key.toLowerCase();
+
+
+        if (letter === "h") {
+            car.honk();
+            reWriteStats();
+        }
+
+        if (letter === "d") {
+            car.driveAroundWorld();
+            reWriteStats();
+        }
+
+        if (letter === "w") {
+            car.driveToWork();
+            reWriteStats();
+        }
+    };
+        
+    
+    </script>
+    
+</body>
+</html>
