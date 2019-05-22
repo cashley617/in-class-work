@@ -77,6 +77,21 @@
         let $button = $(this);
         let id = $button.attr("id");
 
+        switch(id) {
+          case "pbj":
+            // logic for pbj 
+            pbjCount++;
+            break;
+          case "grilledcheese": 
+            grilledCheeseCount++;
+            break;
+          case "roastbeef": 
+            roastBeefCount++;
+            break;
+          default: 
+            console.log("you broke it");
+        }
+
 
         if (id === "pbj") {
           // handle pbj 
