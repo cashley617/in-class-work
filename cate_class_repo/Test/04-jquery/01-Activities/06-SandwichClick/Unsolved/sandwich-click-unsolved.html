@@ -44,29 +44,62 @@
       // Inside each click event is the code to create an alert, update the counter, then show the updated count.
       // ...
 
-      $("#pbj").on("click", function(event) {
-        // alert
-        alert("Peanut Butter Sucks");
-        // update count 
-        pbjCount++;
-        // You can also increase the count with: 
-        // pbjCount += 1;
-        // show the updated count
-        console.log(pbjCount);
-      }); 
+      // $("#pbj").on("click", function(event) {
+      //   // alert
+      //   alert("Peanut Butter Sucks");
+      //   // update count 
+      //   pbjCount++;
+      //   // You can also increase the count with: 
+      //   // pbjCount += 1;
+      //   // show the updated count
+      //   console.log(pbjCount);
+      // }); 
 
-      $("#grilledcheese").on("click", function(event) {
-        alert("Go vegan, you sick fuck");
-        grilledCheeseCount++;
-        console.log(grilledCheeseCount);
-      }); 
+      // $("#grilledcheese").on("click", function(event) {
+      //   alert("Go vegan, you sick fuck");
+      //   grilledCheeseCount++;
+      //   console.log("grilledCheeseCount", grilledCheeseCount);
+      // }); 
 
-      $("#roastbeef").on("click", function(event) {
-        alert("Get roasted!");
-        roastBeefCount++;
-        console.log(roastBeefCount);
-      });
+      // $("#roastbeef").on("click", function(event) {
+      //   alert("Get roasted!");
+      //   roastBeefCount++;
+      //   console.log(roastBeefCount);
+      // });
 
+      $("#pbj").on("click", eventHandler);
+
+      $("#grilledcheese").on("click", eventHandler);
+
+      $("#roastbeef").on("click", eventHandler);
+
+      function eventHandler(event) {
+        let $button = $(this);
+        let id = $button.attr("id");
+
+
+        if (id === "pbj") {
+          // handle pbj 
+          pbjCount++;
+        } else if (id === "grilledcheese") {
+          // handle grilled cheese 
+          grilledCheeseCount++;
+        } else {
+          // handle roast beef
+          roastBeefCount++;
+        }
+        
+        console.warn(id + " has a snarky comment");
+        console.log("pbj count: ", pbjCount);
+        console.log("grilledcheese count: ", grilledCheeseCount);
+        console.log("roastbeef count: ", roastBeefCount);
+
+        
+      }
+
+
+      // switch (id) { }
+      // console.warn("snarky comment");
       // ...
 
     });
