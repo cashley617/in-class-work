@@ -13,9 +13,9 @@
 <body>
 
   <h1>Click to Eat Sandwich</h1>
-  <h3 id="pbj">Peanut Butter Jelly</h3>
-  <h3 id="grilledcheese">Grilled Cheese</h3>
-  <h3 id="roastbeef">Roast Beef</h3>
+  <button id="pbj">Peanut Butter Jelly</button>
+  <button id="grilledcheese">Grilled Cheese</button>
+  <button id="roastbeef">Roast Beef</button>
 
   <div id="image-div"></div>
 
@@ -32,6 +32,9 @@
       // Here we create variables for tracking the number of sandwiches eaten
       // ...
 
+      let pbjCount = 0;
+      let grilledCheeseCount = 0;
+      let roastBeefCount = 0;
 
       // ...
 
@@ -41,6 +44,28 @@
       // Inside each click event is the code to create an alert, update the counter, then show the updated count.
       // ...
 
+      $("#pbj").on("click", function(event) {
+        // alert
+        alert("Peanut Butter Sucks");
+        // update count 
+        pbjCount++;
+        // You can also increase the count with: 
+        // pbjCount += 1;
+        // show the updated count
+        console.log(pbjCount);
+      }); 
+
+      $("#grilledcheese").on("click", function(event) {
+        alert("Go vegan, you sick fuck");
+        grilledCheeseCount++;
+        console.log(grilledCheeseCount);
+      }); 
+
+      $("#roastbeef").on("click", function(event) {
+        alert("Get roasted!");
+        roastBeefCount++;
+        console.log(roastBeefCount);
+      });
 
       // ...
 

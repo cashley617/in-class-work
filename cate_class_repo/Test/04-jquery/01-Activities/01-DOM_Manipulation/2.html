@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Basic JavaScript Dump</title>
+  <style>
+    .zombie {
+      color: darkgreen;
+    }
+  </style>
 </head>
   <body>
 
@@ -16,6 +21,14 @@
 
       // We then use the JavaScript method ".textContent" to change the content to "Hello friends!"
       targetDiv.textContent = "Hello friends!";
+
+      let h1 = document.createElement('h1');
+
+      h1.textContent = "A pleasure to meet you"; 
+
+      h1.classList.add("zombie");
+
+      targetDiv.appendChild(h1);
 
     </script>
 
