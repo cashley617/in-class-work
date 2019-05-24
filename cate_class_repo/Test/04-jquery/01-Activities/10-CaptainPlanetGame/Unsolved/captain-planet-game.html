@@ -66,6 +66,19 @@
           </div>
         </div>
 
+        <!-- Adds The Rest of The Team -->
+        <div id="teamControls" class="card">
+          <h4 class="card-header">To Team, or Not To Team</h4>
+          <div class="card-body">
+            <div class="text-center">
+              <button class="btn btn-dark btn-lg solo-button">
+                <span class="fa fa-user"></span> Solo</button>
+              <button class="btn btn-warning btn-lg team-button">
+                <span class="fa fa-users"></span> Team</button>
+            </div>
+          </div>
+        </div>
+
         <!-- Controls (Superpower Move Controls) -->
         <div id="moveControls" class="card">
           <h4 class="card-header">Move Controls</h4>
@@ -103,6 +116,9 @@
 
     var captainPlanet = $(".captain-planet");
 
+    let teamPlanet = document.createElement("img");
+    teamPlanet.setAttribute("src", "assets/download.jpg");
+
     // Gets Link for Theme Song
     var audioElement = document.createElement("audio");
     audioElement.setAttribute("src", "assets/captainplanet24.mp3");
@@ -133,6 +149,16 @@
     $(".invis-button").on("click", function() {
       captainPlanet.animate({ opacity: "0.05" });
     });
+
+    // Team Section 
+    $(".solo-button").on("click", function() {
+      captainPlanet.animate({ opacity: "1" });
+      captainPlanet.animate({ height: "300px" });
+      captainPlanet.animate({ top: "50px", left: "80px" }, "fast");
+    }); 
+    $(".team-button").on("click", function() {
+      teamPlanet.animate({ top: "75px", left: "80px" }, "fast");
+    })
 
     // Move Buttons
     $(".up-button").on("click", function() {

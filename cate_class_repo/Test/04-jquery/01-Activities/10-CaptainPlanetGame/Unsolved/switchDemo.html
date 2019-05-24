@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Switch Demo</title>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+<body>
+    <script>
+        // If, Else Example
+        // const animal = "Bruiser"; 
+        // if (animal === "Fido") {
+        //     console.log("Fido is awesome");
+        // } else if (animal === "spike") {
+        //     console.log("Spike!");
+        // } else if (animal === "Bruiser") {
+        //     console.log("Yorkies are here!");
+        // } else {
+        //     console.log("Your animal has no name");
+        // };
+
+
+        const $input = $("#name");
+        const $button = $("#compare"); 
+
+        $button.on("click", clickHandler); 
+
+        function clickHandler() {
+            const name = $input.val();
+        }
+
+
+// Switch instead of If, Else 
+// Switch only works if you are using the same variable/expression. In this case, animal. 
+        switch(name) {
+            case "fido":
+                console.log("Fido is awesome");
+                break;
+            case "Spike": 
+                console.log("Woof!");
+                break;
+            case "Bruiser": 
+                console.log("Yorkies are here!");
+                break;
+            case "":
+                console.log("You didn't write anything");
+                break;
+            default: 
+                console.log("Your animal has no name");
+                break;
+        }
+    </script>
+    
+</body>
+</html>
