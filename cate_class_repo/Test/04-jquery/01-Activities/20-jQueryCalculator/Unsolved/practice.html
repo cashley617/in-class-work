@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+<script>
+        
+        // For Loop
+        function helloWorld() {
+
+            for (let i = 0; i < 10; i++) {
+                console.log("Hello, world!");
+            }  
+            }
+        
+    // While Loop 
+      function helloWorld() {
+          var x = 0; 
+          while (x < 10) {
+              console.log("Hello, world!");
+              x++;
+          }
+      }  
+
+
+    //   For loop checking for even numbers 
+
+      function helloWorld() {
+          for ( let i = 0; i < 10; i++) {
+              if (i % 2 === 0) {
+                  console.log("Hello, World!");
+              } else {
+                  console.log("Goodbye, cruel world!");
+              }
+          }
+      }
+
+
+    //   Event Listeners 
+    $('.something').on('click', function(e) {
+        console.log("clicked");
+    });
+
+
+// For Each 
+$('.something').each(function (item, id) {
+
+});
+
+
+
+    // Work with Clayton on Objects 
+    // This runs through a sentence and counts the number of times words repeat 
+    const sentence = "bananas are bananas, would you get a load of that? You can't do that."
+
+    function countWords(sentence) {
+        sentence = sentence.replace(/[.,\/#!$%\^&\*;:{}=\-_~()?]/g, "")
+        let wordsObj = {
+
+        }
+        const wordsArr = sentence.split(' ')
+        console.log(wordsArr)
+        for (let i = 0; i < wordsArr.length; i++) {
+            if (!wordsObj[wordsArr[i]]) {
+                wordsObj[wordsArr[i]] = 1;
+            } else {
+                wordsObj[wordsArr[i]] += 1;
+            }
+        }
+        console.log(wordsObj)
+    }
+
+    countWords(sentence)
+
+
+
+
+
+
+
+
+
+        
+        
+</script>
+    
+</body>
+</html>

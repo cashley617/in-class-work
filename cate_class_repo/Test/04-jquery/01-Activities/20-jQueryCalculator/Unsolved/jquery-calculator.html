@@ -76,9 +76,37 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
+  let num1;
+  let num2;
+  let operator;
 
 // Your code here...
+// Number listener 
+// -if there is no operator, then keep adding to first number 
+  $('.number').on('click', function(e) {
+    console.log(this, e);
+  });
 
+
+// Operator Listener 
+// - Set Operator
+
+$('.operator').on('click', function(e) {
+  console.log(this.value);
+});
+
+
+// Equals listener 
+// -Perform operation based upon the current operator 
+$('.equal').on('click', function(e) {
+  
+});
+
+// Clear Listener 
+// -Clear UI and variables 
+$('.clear').on('click', function(e) {
+
+});
 
 
 
