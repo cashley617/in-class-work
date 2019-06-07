@@ -55,3 +55,17 @@ function isPrime(n) {
     }
     return true;
 }
+
+
+
+// Bubble Sort 
+// visualgo.net/bn/sorting 
+
+// do 
+// swapped = false 
+
+// if left > right 
+// move left to right 
+// swapped = true 
+
+
