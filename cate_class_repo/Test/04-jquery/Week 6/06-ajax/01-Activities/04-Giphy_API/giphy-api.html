@@ -16,7 +16,11 @@
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-      console.log(response);
+      console.log(response.data[0]);
+      var url = response.data[0].images.original.url;
+      var newImage = $('<img>');
+      newImage.attr("src", url);
+      $('body').append(newImage);
     });
   </script>
 
