@@ -34,17 +34,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
       // Initial array of movies
-      var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
+      let movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
 
       // Function for displaying movie data
       function renderButtons() {
 
         // Delete the content inside the buttons-view div prior to adding new movies
         // (this is necessary otherwise you will have repeat buttons)
+        $("#buttons-view").empty();
 
         // Loop through the array of movies, then generate buttons for each movie in the array
 
-      }
+        for (let i = 0; i < movies.length; i++) {
+
+          // Then dynamicaly generating buttons for each movie in the array
+          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+          let a = $("<button>");
+          // Adding a class
+          a.addClass("movie");
+          // Added a data-attribute
+          a.attr("data-name", movies[i]);
+          // Provided the initial button text
+          a.text(movies[i]);
+          // Added the button to the HTML
+          $("#buttons-view").append(a);
+        }
+      };
+
 
       // This function handles events where the add movie button is clicked
       $("#add-movie").on("click", function(event) {
@@ -54,7 +70,10 @@
         event.preventDefault();
 
         // Write code to grab the text the user types into the input field
+        var movie = $("#movie-input").val().trim();
+
         // Write code to add the new movie into the movies array
+        movies.push(movie);
 
         // The renderButtons function is called, rendering the list of movie buttons
         renderButtons();

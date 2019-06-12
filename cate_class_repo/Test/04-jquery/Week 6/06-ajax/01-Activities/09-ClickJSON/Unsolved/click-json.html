@@ -36,11 +36,9 @@
       var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
 
       // Function for dumping the JSON content for each button into the div
-      function displayMovieInfo() {
-
-        // YOUR CODE GOES HERE!!! HINT: You will need to create a new div to hold the JSON.
-
-      }
+      function alertMovieName() {
+        alert($(this).attr("data-name"));
+      };
 
       // Function for displaying movie data
       function renderButtons() {
