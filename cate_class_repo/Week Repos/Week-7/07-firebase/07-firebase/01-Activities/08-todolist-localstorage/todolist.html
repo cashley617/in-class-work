@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>To Do App!</title>
+
+    <style>
+        #todo-item {
+            font-weight: 700;
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Title -->
+    <h1>My To Do's!</h1>
+
+    <!-- Input Form -->
+    <form>
+        <span id="todo-item">To Do Item: <input id="to-do" type="text"><input id="add-to-do" value="Add Item"
+                type="submit"></span>
+    </form>
+
+    <hr>
+
+    <!-- To-Do List -->
+    <div id="to-dos"></div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Script -->
+
+    <script type="text/javascript">
+
+    function displayToDos(list) {
+        $("#to-dos").empty();
+
+        for (let i = 0; i < list.length; i++) {
+            let toDoItem = $("<p>");
+            toDoItem.text(list[i]);
+
+            let toDoClose = $("<button>");
+            
+            toDoClose.attr("data-to-do", i);
+            toDoClose.addClass("checkbox");
+            toDoClose.text("✓");
+
+            toDoItem = toDoItem.preprend(toDoClose);
+
+            $("#to-dos").append(toDoItem);
+        }
+    };
+
+    $("#add-to-do").on("click", function(event) {
+        event.preventDefault();
+
+        let toDoTask = $("#to-do").val().trim();
+
+        list.push(toDoTask);
+
+        displayToDos(list); 
+
+        localStorage.setItem("todolist", JSON.stringify(list));
+
+        $("#to-do").val("");
+
+    });
+
+    // Click checkbox and delete item 
+
+    $(document).on("click", ".checkbox", function() {
+        let toDoNumber = $(this).attr("data-to-do");
+
+        list.splice(toDoNumber, 1);
+
+        displayToDos(list);
+
+        localStorage.setItem("todolist", JSON.stringify(list));
+    });
+
+    let list = JSON.parse(localStorage.getItem("todolist"));
+
+    if (!Array.isArray(list)) {
+        list = [];
+    };
+
+    displayToDos(list);
+
+
+    </script>
+
+</body>
+
+</html>
