@@ -2,9 +2,22 @@
 // Make sure that your configuration matches your firebase script version
 // (Ex. 3.0 != 3.7.1)
 
+var config = {
+  apiKey: "AIzaSyCZBSu3Jqc40KicpOAVgrzeYY1xY_BMK74",
+  authDomain: "cate-project.firebaseapp.com",
+  databaseURL: "https://cate-project.firebaseio.com",
+  projectId: "cate-project",
+  storageBucket: "cate-project.appspot.com",
+  messagingSenderId: "982130565344",
+  appId: "1:982130565344:web:1b5abdb4d4be4a51"
+};
+
+firebase.initializeApp(config);
+
 // Create a variable to reference the database
 // var database = ...
 
+let database = firebase.database();
 
 // Use the below initialValue
 var initialValue = 100;
@@ -16,6 +29,9 @@ var clickCounter = initialValue;
 
 // At the initial load and on subsequent data value changes, get a snapshot of the current data. (I.E FIREBASE HERE)
 // This callback keeps the page updated when a value changes in firebase.
+database.ref().on('value', function(snapshot) {
+
+
 // HINT: Assuming 'database' is our database variable, use...
 // database.ref().on("value", function(snapshot)) {}
 
@@ -23,18 +39,22 @@ var clickCounter = initialValue;
 
 // Console.log the "snapshot" value (a point-in-time representation of the database)
 // This "snapshot" allows the page to get the most current values in firebase.
-
+console.log(snapshot.val());
 
 // Change the value of our clickCounter to match the value in the database
 // ___________ = snapshot.val().______________________
+clickCounter = snapshot.val().clickCount;
 
 // Console Log the value of the clickCounter
+console.log(clickCounter);
 
 // Change the HTML using jQuery to reflect the updated clickCounter value
-
+$("#click-value").text(clickCounter);
 // Then include Firebase error logging
 // HINT: }, function(errorObject)
-
+}, function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
 // --------------------------------------------------------------
 
 // Whenever a user clicks the click button
@@ -53,6 +73,9 @@ $("#click-button").on("click", function() {
   }
 
   // Save new value to Firebase
+  database.ref().set({
+    clickCount: clickCounter
+  });
 
 
   // Log the value of clickCounter
@@ -67,7 +90,9 @@ $("#restart-button").on("click", function() {
   clickCounter = initialValue;
 
   // Save new value to Firebase
-
+database.ref().set({
+  clickCount: clickCounter
+});
 
   // Log the value of clickCounter
   console.log(clickCounter);

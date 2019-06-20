@@ -4,11 +4,13 @@
 // Make sure that your configuration matches your firebase script version
 // (Ex. 3.0 != 3.7.1)
 var config = {
-  apiKey: "AIzaSyB4Ws5gPo9gNW9x90uXnX6XZ4uqE5QjkUY",
-  authDomain: "countdownclicker.firebaseapp.com",
-  databaseURL: "https://countdownclicker.firebaseio.com",
-  storageBucket: "countdownclicker.appspot.com",
-  messagingSenderId: "435604262542"
+  apiKey: "AIzaSyCZBSu3Jqc40KicpOAVgrzeYY1xY_BMK74",
+  authDomain: "cate-project.firebaseapp.com",
+  databaseURL: "https://cate-project.firebaseio.com",
+  projectId: "cate-project",
+  storageBucket: "cate-project.appspot.com",
+  messagingSenderId: "982130565344",
+  appId: "1:982130565344:web:1b5abdb4d4be4a51"
 };
 
 firebase.initializeApp(config);

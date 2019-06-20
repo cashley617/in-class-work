@@ -25,23 +25,38 @@
   <!-- ================================================================================== -->
 
   <!-- Firebase Core JavaScript Link -->
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script> -->
 
    <!-- Specific Firebase products we want -->
-   <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+   <!-- <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script> -->
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
 
   <script>
-    // Initialize Firebase
-    // This is the code we copied and pasted from our app page
-    var config = {
-      apiKey: "AIzaSyAJS4YQWU5DmESeYueG1qH1NGkjv3DncEY",
-      authDomain: "fir-click-counter-7cdb9.firebaseapp.com",
-      databaseURL: "https://fir-click-counter-7cdb9.firebaseio.com",
-      projectId: "fir-click-counter-7cdb9",
-      storageBucket: "fir-click-counter-7cdb9.appspot.com"
-    };
+  // <!-- TODO: Add SDKs for Firebase products that you want to use
+      "https://firebase.google.com/docs/web/setup#config-web-app"
 
-    firebase.initializeApp(config);
+  </script>
+
+  <script>
+      
+        var firebaseConfig = {
+          apiKey: "AIzaSyCZBSu3Jqc40KicpOAVgrzeYY1xY_BMK74",
+          authDomain: "cate-project.firebaseapp.com",
+          databaseURL: "https://cate-project.firebaseio.com",
+          projectId: "cate-project",
+          storageBucket: "cate-project.appspot.com",
+          messagingSenderId: "982130565344",
+          appId: "1:982130565344:web:1b5abdb4d4be4a51"
+      };
+   
+      firebase.initializeApp(firebaseConfig);
+   
+
+
+
 
     // Variables
     // ================================================================================
@@ -71,7 +86,8 @@
 
       // Now! go to https://fir-click-counter-7cdb9.firebaseio.com/ to see the impact to the DB
     });
-  </script>
+
+</script>
 
 </body>
 
