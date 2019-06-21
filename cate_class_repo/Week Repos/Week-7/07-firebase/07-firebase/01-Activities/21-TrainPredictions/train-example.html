@@ -43,6 +43,37 @@
     // 16 % 3 = 1 (Modulus is the remainder)
     // 3 - 1 = 2 minutes away
     // 2 + 3:16 = 3:18
+    moment("03:00 pm", "HH:mm A").format("hh:mm A").fromNow(3, "minutes");
+    moment("03:00 pm", "HH:mm A").add(3, "minutes") 
+    moment("03:00 pm", "HH:mm A").add(3, "minutes").format("hh:mm A");
+    let threeOClock = moment("3:00", "h:mm");
+    threeOClock.add(1, "hours");
+
+    
+
+    // homework
+    let differenceTimes = moment().diff(trainTime, "minutes");
+    let tRemainder = differenceTimes % tFrequency;
+    tMinutes = tFrequency - tRemainder;
+
+
+    tArrival = moment()
+    .add(tMinutes, "m")
+    .format("hh:mm A");
+
+
+    $("#train-table > tbody").append(
+      $("<tr>").text(tName),
+        $("<td>").text(tName),
+        $("<td>").text(tDestination),
+        $("<td>").text(tFrequency),
+        $("<td>").text(tArrival),
+        
+    )
+
+
+
+
 
     // Solved Mathematically
     // Test case 2:

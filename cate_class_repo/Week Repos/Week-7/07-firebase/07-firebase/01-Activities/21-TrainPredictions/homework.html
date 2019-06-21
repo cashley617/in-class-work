@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework</title>
+
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+</head>
+<body>
+
+<script>
+    
+    // homework
+
+    if (maxMoment === trainTime) {
+        tArrival = trainTime.format("hh:mm A");
+        tMinutes = trainTime.diff(moment(), "minutes");
+    } else {
+    // and find the modulus between the difference and the frequency
+        let differenceTimes = moment().diff(trainTime, "minutes");
+        let tRemainder = differenceTimes % tFrequency;
+        tMinutes = tFrequency - tRemainder;
+
+    // To calculate the arrival time, add the tMinutes to the current time 
+        tArrival = moment()
+            .add(tMinutes, "m")
+            .format("hh:mm A");
+    };
+    console.log("tMinutes:", tMinutes);
+    console.log("tArrival:", tArrival);
+
+    // Add each train's data into the table 
+        $("#train-table > tbody").append(
+            $("<tr>").append(
+                $("<td>").text(tName),
+                $("<td>").text(tDestination),
+                $("<td>").text(tFrequency),
+                $("<td>").text(tArrival),
+                $("<td>").text(tMinutes),
+            )
+        );
+    
+    
+    
+    
+    
+</script>
+
+
+
+
+
+
+
+    
+</body>
+</html>
